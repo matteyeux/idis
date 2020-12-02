@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 {
 	int optindex = 0, opt = 0;
 	uint count = 0, skip = 0;
-	uint64_t base_addr = 0;
+	uint64_t base_addr = 0xffffffff;
 	iboot_t *iboot = NULL;
 	
 	if (argc < 2) {
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
 		return 0;
 	}
 
-	if (base_addr == 0)
+	if (base_addr == 0xffffffff)
 		iboot->base_addr = get_iboot_base_addr(iboot);
 
 	do_disassemble(iboot, count, skip);
