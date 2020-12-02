@@ -124,9 +124,7 @@ int do_disassemble(iboot_t *iboot, uint count, uint from)
 
 	i = from;
 	for (; i < insn_count; i++) {
-		//printf("%d\n", insn[i].id);
-		printf("0x%"PRIx64":\t%s \t\t%s\n", insn[i].address, insn[i].mnemonic, insn[i].op_str);
-		//break;
+		printf("0x%"PRIx64"\t%s \t\t%s\n", insn[i].address, insn[i].mnemonic, insn[i].op_str);
 	}
 
 	cs_free(insn, insn_count);

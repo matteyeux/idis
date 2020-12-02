@@ -23,11 +23,11 @@ void usage(char **argv)
 	char *name = NULL;
 	name = strrchr(argv[0], '/');
 	printf("Usage : %s [options] <iboot>\n",(name ? name + 1: argv[0]));
-	printf(" -b, --base\t\t\tiBoot base address\n");
+	printf(" -b, --base\tiBoot base address\n");
 	printf(" -c, --count\tinstructions count\n");
-	printf(" -s, --skip\t\t\tnumber of instructions to skip\n");
-	printf(" -h, --help\t\t\tprint help\n");
-	printf(" -v, --version\t\t\tversion\n");
+	printf(" -s, --skip\tnumber of instructions to skip\n");
+	printf(" -h, --help\tprint help\n");
+	printf(" -v, --version\tversion\n");
 }
 
 
@@ -76,7 +76,6 @@ int main(int argc, char **argv)
 	if (base_addr == 0)
 		iboot->base_addr = get_iboot_base_addr(iboot);
 
-	printf("%d %d\n", count, skip);
 	do_disassemble(iboot, count, skip);
 
 	iboot_free(iboot);
