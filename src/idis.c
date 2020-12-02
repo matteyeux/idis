@@ -113,8 +113,8 @@ int do_disassemble(iboot_t *iboot, uint count, uint from)
 
 	/* use SKIPDATA mode so it doesn't stop whenever it finds DATA */
 	cs_option(handle, CS_OPT_DETAIL, CS_OPT_ON);
-    cs_option(handle, CS_OPT_SKIPDATA, CS_OPT_ON);
-    cs_option(handle, CS_OPT_SKIPDATA_SETUP, (size_t)&skipdata);
+	cs_option(handle, CS_OPT_SKIPDATA, CS_OPT_ON);
+	cs_option(handle, CS_OPT_SKIPDATA_SETUP, (size_t)&skipdata);
 
 	insn_count = cs_disasm(handle, iboot->iboot, iboot->len - 1, iboot->base_addr, count, &insn);
 	if (insn_count <= 0) {
